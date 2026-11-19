@@ -1,0 +1,324 @@
+Configure this repository to deploy on Vercel as a project with multiple services.
+
+Here is a suggested `vercel.json` to add to the repo root directory, auto-detected from the repository layout. Treat it as a starting point, not a finished answer:
+
+```json
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "app": {
+      "root": ".",
+      "framework": "nextjs"
+    },
+    "bundle-analyzer": {
+      "root": "apps/bundle-analyzer",
+      "framework": "nextjs"
+    },
+    "app-router-server": {
+      "root": "bench/app-router-server",
+      "framework": "nextjs"
+    },
+    "heavy-npm-deps": {
+      "root": "bench/heavy-npm-deps",
+      "framework": "nextjs"
+    },
+    "large-app-router": {
+      "root": "bench/large-app-router",
+      "framework": "nextjs"
+    },
+    "module-cost": {
+      "root": "bench/module-cost",
+      "framework": "nextjs"
+    },
+    "nested-deps": {
+      "root": "bench/nested-deps",
+      "framework": "nextjs"
+    },
+    "nested-deps-app-router": {
+      "root": "bench/nested-deps-app-router",
+      "framework": "nextjs"
+    },
+    "nested-deps-app-router-many-pages": {
+      "root": "bench/nested-deps-app-router-many-pages",
+      "framework": "nextjs"
+    },
+    "recursive-delete": {
+      "root": "bench/recursive-delete",
+      "framework": "nextjs"
+    },
+    "next-build-test": {
+      "root": "crates/next-build-test",
+      "runtime": "rust"
+    },
+    "js": {
+      "root": "crates/next-core/js",
+      "framework": "nextjs"
+    },
+    "agent-000-app-router-migration-simple": {
+      "root": "evals/evals/agent-000-app-router-migration-simple",
+      "framework": "nextjs"
+    },
+    "agent-021-avoid-fetch-in-effect": {
+      "root": "evals/evals/agent-021-avoid-fetch-in-effect",
+      "framework": "nextjs"
+    },
+    "agent-022-prefer-server-actions": {
+      "root": "evals/evals/agent-022-prefer-server-actions",
+      "framework": "nextjs"
+    },
+    "agent-023-avoid-getserversideprops": {
+      "root": "evals/evals/agent-023-avoid-getserversideprops",
+      "framework": "nextjs"
+    },
+    "agent-024-avoid-redundant-usestate": {
+      "root": "evals/evals/agent-024-avoid-redundant-usestate",
+      "framework": "nextjs"
+    },
+    "agent-025-prefer-next-link": {
+      "root": "evals/evals/agent-025-prefer-next-link",
+      "framework": "nextjs"
+    },
+    "agent-026-no-serial-await": {
+      "root": "evals/evals/agent-026-no-serial-await",
+      "framework": "nextjs"
+    },
+    "agent-027-prefer-next-image": {
+      "root": "evals/evals/agent-027-prefer-next-image",
+      "framework": "nextjs"
+    },
+    "agent-028-prefer-next-font": {
+      "root": "evals/evals/agent-028-prefer-next-font",
+      "framework": "nextjs"
+    },
+    "agent-029-use-cache-directive": {
+      "root": "evals/evals/agent-029-use-cache-directive",
+      "framework": "nextjs"
+    },
+    "agent-030-app-router-migration-hard": {
+      "root": "evals/evals/agent-030-app-router-migration-hard",
+      "framework": "nextjs"
+    },
+    "agent-031-proxy-middleware": {
+      "root": "evals/evals/agent-031-proxy-middleware",
+      "framework": "nextjs"
+    },
+    "agent-032-use-cache-directive": {
+      "root": "evals/evals/agent-032-use-cache-directive",
+      "framework": "nextjs"
+    },
+    "agent-033-forbidden-auth": {
+      "root": "evals/evals/agent-033-forbidden-auth",
+      "framework": "nextjs"
+    },
+    "agent-034-async-cookies": {
+      "root": "evals/evals/agent-034-async-cookies",
+      "framework": "nextjs"
+    },
+    "agent-035-connection-dynamic": {
+      "root": "evals/evals/agent-035-connection-dynamic",
+      "framework": "nextjs"
+    },
+    "agent-036-after-response": {
+      "root": "evals/evals/agent-036-after-response",
+      "framework": "nextjs"
+    },
+    "agent-037-updatetag-cache": {
+      "root": "evals/evals/agent-037-updatetag-cache",
+      "framework": "nextjs"
+    },
+    "agent-038-refresh-settings": {
+      "root": "evals/evals/agent-038-refresh-settings",
+      "framework": "nextjs"
+    },
+    "agent-039-indirect-proxy": {
+      "root": "evals/evals/agent-039-indirect-proxy",
+      "framework": "nextjs"
+    },
+    "agent-040-instant": {
+      "root": "evals/evals/agent-040-instant",
+      "framework": "nextjs"
+    },
+    "agent-041-optimize-ppr-shell": {
+      "root": "evals/evals/agent-041-optimize-ppr-shell",
+      "framework": "nextjs"
+    },
+    "agent-042-enable-ppr": {
+      "root": "evals/evals/agent-042-enable-ppr",
+      "framework": "nextjs"
+    },
+    "agent-043-view-transitions": {
+      "root": "evals/evals/agent-043-view-transitions",
+      "framework": "nextjs"
+    },
+    "agent-046-adopt-partial-prefetching": {
+      "root": "evals/evals/agent-046-adopt-partial-prefetching",
+      "framework": "nextjs"
+    },
+    "agent-047-adopt-cache-components": {
+      "root": "evals/evals/agent-047-adopt-cache-components",
+      "framework": "nextjs"
+    },
+    "agent-048-prefetch-url-data": {
+      "root": "evals/evals/agent-048-prefetch-url-data",
+      "framework": "nextjs"
+    },
+    "agent-049-prefetch-stage": {
+      "root": "evals/evals/agent-049-prefetch-stage",
+      "framework": "nextjs"
+    },
+    "agent-050-optimize-static-shell": {
+      "root": "evals/evals/agent-050-optimize-static-shell",
+      "framework": "nextjs"
+    },
+    "agent-051-optimize-partial-prefetching": {
+      "root": "evals/evals/agent-051-optimize-partial-prefetching",
+      "framework": "nextjs"
+    },
+    "agent-051-prefetch-until-navigation": {
+      "root": "evals/evals/agent-051-prefetch-until-navigation",
+      "framework": "nextjs"
+    },
+    "agent-052-cache-components-session-isolation": {
+      "root": "evals/evals/agent-052-cache-components-session-isolation",
+      "framework": "nextjs"
+    },
+    "agent-053-cache-components-url-shell": {
+      "root": "evals/evals/agent-053-cache-components-url-shell",
+      "framework": "nextjs"
+    },
+    "agent-054-cache-components-empty-static-params": {
+      "root": "evals/evals/agent-054-cache-components-empty-static-params",
+      "framework": "nextjs"
+    },
+    "agent-055-stale-build-error": {
+      "root": "evals/evals/agent-055-stale-build-error",
+      "framework": "nextjs"
+    },
+    "agent-056-agent-feedback-routine-debugging": {
+      "root": "evals/evals/agent-056-agent-feedback-routine-debugging",
+      "framework": "nextjs"
+    },
+    "agent-057-agent-feedback-anonymization": {
+      "root": "evals/evals/agent-057-agent-feedback-anonymization",
+      "framework": "nextjs"
+    },
+    "agent-058-agent-feedback-distinct-issues": {
+      "root": "evals/evals/agent-058-agent-feedback-distinct-issues",
+      "framework": "nextjs"
+    },
+    "agent-059-bundle-audit-server-leaks": {
+      "root": "evals/evals/agent-059-bundle-audit-server-leaks",
+      "framework": "nextjs"
+    },
+    "agent-059-bundle-optimizer-next-dynamic": {
+      "root": "evals/evals/agent-059-bundle-optimizer-next-dynamic",
+      "framework": "nextjs"
+    },
+    "agent-060-bundle-fix-server-leaks": {
+      "root": "evals/evals/agent-060-bundle-fix-server-leaks",
+      "framework": "nextjs"
+    },
+    "agent-060-bundle-optimizer-rsc-markdown": {
+      "root": "evals/evals/agent-060-bundle-optimizer-rsc-markdown",
+      "framework": "nextjs"
+    },
+    "agent-061-agent-feedback-upgrade-nudge": {
+      "root": "evals/evals/agent-061-agent-feedback-upgrade-nudge",
+      "framework": "nextjs"
+    },
+    "agent-061-bundle-optimizer-dedupe-packages": {
+      "root": "evals/evals/agent-061-bundle-optimizer-dedupe-packages",
+      "framework": "nextjs"
+    },
+    "next": {
+      "root": "packages/next",
+      "framework": "storybook"
+    },
+    "third-parties": {
+      "root": "packages/third-parties",
+      "framework": "nextjs"
+    },
+    "send-trace-to-jaeger": {
+      "root": "scripts/send-trace-to-jaeger",
+      "runtime": "rust"
+    },
+    "turbo-persistence-tools": {
+      "root": "turbopack/crates/turbo-persistence-tools",
+      "runtime": "rust"
+    },
+    "turbo-tasks-fuzz": {
+      "root": "turbopack/crates/turbo-tasks-fuzz",
+      "runtime": "rust"
+    },
+    "turbopack-cli": {
+      "root": "turbopack/crates/turbopack-cli",
+      "runtime": "rust"
+    },
+    "turbopack-create-test-app": {
+      "root": "turbopack/crates/turbopack-create-test-app",
+      "runtime": "rust"
+    },
+    "turbopack-nft": {
+      "root": "turbopack/crates/turbopack-nft",
+      "runtime": "rust"
+    },
+    "turbopack-swc-ast-explorer": {
+      "root": "turbopack/crates/turbopack-swc-ast-explorer",
+      "runtime": "rust"
+    },
+    "turbopack-trace-server": {
+      "root": "turbopack/crates/turbopack-trace-server",
+      "runtime": "rust"
+    },
+    "turbopack-trace-size": {
+      "root": "turbopack/crates/turbopack-trace-size",
+      "runtime": "rust"
+    },
+    "xtask": {
+      "root": "turbopack/xtask",
+      "runtime": "rust"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "app"
+      }
+    }
+  ]
+}
+```
+
+## How Vercel services work
+
+Services let one repository deploy multiple backends and frontends as a single Vercel project, with shared routing, environment variables, and one domain. Each service is built independently, and at request time Vercel routes to a service based on the top-level rewrites.
+
+- Define each service under the top-level `services` key. A service's `root` is its directory relative to the directory containing `vercel.json`; `framework`, `runtime`, `entrypoint`, and `buildCommand` are set per service.
+- A service is **internal by default** and receives no public traffic. It is only reachable from the internet if a top-level rewrite targets it, using the object form: `{ "source": "/api/(.*)", "destination": { "service": "my_backend" } }`.
+- Order rewrites from the most specific path to the least; a catch-all `/(.*)` should come last.
+- In services mode, build and runtime keys (`functions`, `installCommand`, `buildCommand`, `devCommand`, `ignoreCommand`, `outputDirectory`, `framework`) are not valid at the top level and must move into the service they belong to. Public routing keys stay at the top level.
+- `vercel dev` runs all services together locally and injects binding variables. Use this command for testing.
+
+Docs: https://vercel.com/docs/services
+
+## What I need you to do
+
+1. **Add bindings for internal services.** Any service that calls another service should use a binding, declared on the *calling* service. A binding injects the target's internal URL into the calling service — it does not make the target public. Each entry looks like:
+
+   ```json
+   "bindings": [
+     { "type": "service", "service": "inventory", "format": "url", "env": "INVENTORY_URL" }
+   ]
+   ```
+
+   All four fields are required: `type` is always `"service"`, `service` is the target's name in `services`, `format` is always `"url"`, and `env` is the variable Vercel injects the target's base URL into. Do not set that variable yourself.
+
+2. **Update the application code to match the routing and bindings.** Read the code to find where services currently call each other — hardcoded hostnames, localhost ports, internal base URLs, service-discovery config, docker-compose hostnames — and change them to read the bound variable, e.g. `await fetch(new URL('items/123', process.env.INVENTORY_URL))`. Also reconcile the code with the public paths: if a service is mounted under a path prefix, make sure its routes and any client-side URLs agree with it. Bindings resolve at runtime in functions only — not during builds, and not in middleware.
+
+3. **Confirm the details with me before you finish.** The service names, the public rewrites, and the bindings in the snippet above are inferred and may be wrong. Show me the final `vercel.json` and explicitly ask me to confirm:
+   - the **name** of each service,
+   - which services should be **public** and on what path, and which should stay internal,
+   - the **bindings** you added, i.e. which service calls which.
+
+   Ask about anything you had to guess rather than assuming it.
